@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <title>Game Board</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        -webkit-min-device-pixel-ratio: 0;
+        background-color: black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      h4,
+      h5 {
+        background: transparent;
+      }
+
+      .container {
+        width: 99vh;
+        height: 99vh;
+        margin: 0.5vh auto;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+      }
+
+      .h1,
+      .h2,
+      .h3,
+      .h4 {
+        font-size: 0.7rem;
+      }
+
+      .large h4 {
+        font-size: 1rem;
+      }
+
+      .large .h1,
+      .large .h2,
+      .large .h3,
+      .large .h4 {
+        font-size: 0.7rem;
+      }
+
+      .ithilien {
+        border: solid 1px #93cb52;
+        color: #93cb52;
+        text-align: center;
+        padding-top: 60%;
+        font-size: 2vh;
+        position: relative;
+      }
+
+      .woods {
+        border: solid 1px darkorchid;
+        color: darkorchid;
+        text-align: center;
+        padding-top: 60%;
+        font-size: 2vh;
+        position: relative;
+      }
+
+      .lake {
+        border: solid 1px skyblue;
+        color: skyblue;
+        text-align: center;
+        padding-top: 60%;
+        font-size: 2vh;
+        position: relative;
+      }
+
+      .alabastra {
+        border: solid 1px blue;
+        color: blue;
+        text-align: center;
+        padding-top: 60%;
+        font-size: 2vh;
+        position: relative;
+      }
+
+      .fire {
+        border: solid 1px orangered;
+        color: orangered;
+        text-align: center;
+        padding-top: 60%;
+        font-size: 2vh;
+        position: relative;
+      }
+
+      .fa-arrow-up {
+        background: transparent;
+        position: absolute;
+        top: 20px;
+        left: 27px;
+      }
+
+      .fa-arrow-left {
+        background: transparent;
+        position: absolute;
+        top: 25px;
+        left: 27px;
+      }
+
+      .fa-arrow-down {
+        background: transparent;
+        position: absolute;
+        top: 25px;
+        left: 27px;
+      }
+
+      .fa-arrow-right {
+        background: transparent;
+        position: absolute;
+        top: 25px;
+        left: 27px;
+      }
+
+      .h1 {
+        position: absolute;
+        top: 3px;
+        left: 7px;
+      }
+
+      .h2 {
+        position: absolute;
+        top: 3px;
+        right: 7px;
+      }
+
+      .h3 {
+        position: absolute;
+        bottom: 3px;
+        left: 7px;
+      }
+      .h4 {
+        position: absolute;
+        bottom: 3px;
+        right: 7px;
+      }
+
+      .box-1 {
+        background: url("./img/plains/plains1.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-2 {
+        background: url("./img/plains/plains2.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-3 {
+        background: url("./img/plains/plains3.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-4 {
+        background: url("./img/plains/plains4.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-6 {
+        background: url("./img/plains/plains5.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-7 {
+        background: url("./img/plains/plains6.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-9 {
+        background: url("./img/plains/plains7.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-10 {
+        background: url("./img/plains/plains8.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-12 {
+        background: url("./img/plains/plains9.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-13 {
+        background: url("./img/plains/plains10.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-15 {
+        background: url("./img/plains/plains11.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-16 {
+        background: url("./img/plains/plains12.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-18 {
+        background: url("./img/plains/plains13.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-19 {
+        background: url("./img/plains/plains14.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-21 {
+        background: url("./img/plains/plains15.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-22 {
+        background: url("./img/plains/plains16.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-24 {
+        background: url("./img/plains/plains17.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-25 {
+        background: url("./img/plains/plains18.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-27 {
+        background: url("./img/plains/plains19.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-5 {
+        background: url("./img/plains/firelion.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-8 {
+        background: url("./img/plains/burned.house.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-11 {
+        background: url("./img/plains/elvenstatue.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-14 {
+        background: url("./img/plains/monastery.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-17 {
+        background: url("./img/plains/waterfountain.png") no-repeat center
+          center/cover;
+      }
+
+      .box-20 {
+        background: url("./img/plains/Thieves.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-23 {
+        background: url("./img/plains/castle.jpg") no-repeat center center/cover;
+      }
+
+      .box-26 {
+        background: url("./img/plains/Trap.jpg") no-repeat center center/cover;
+      }
+
+      .box-28 {
+        background: url("./img/plains/BearGuardian.jpg");
+        background-size: cover;
+      }
+      /* ******************************************************************************************************************************** */
+
+      .box-29 {
+        background: url("./img/woods/dark1.jpeg") no-repeat center center/cover;
+      }
+
+      .box-30 {
+        background: url("./img/woods/dark2.jpg") no-repeat center center/cover;
+      }
+
+      .box-32 {
+        background: url("./img/woods/dark3.jpg") no-repeat center center/cover;
+      }
+
+      .box-33 {
+        background: url("./img/woods/dark4.jpg") no-repeat center center/cover;
+      }
+
+      .box-35 {
+        background: url("./img/woods/dark5.jpg") no-repeat center center/cover;
+      }
+
+      .box-36 {
+        background: url("./img/woods/dark6.jpg") no-repeat center center/cover;
+      }
+
+      .box-38 {
+        background: url("./img/woods/dark7.jpg") no-repeat center center/cover;
+      }
+
+      .box-39 {
+        background: url("./img/woods/dark8.jpg") no-repeat center center/cover;
+      }
+
+      .box-41 {
+        background: url("./img/woods/dark9.jpg") no-repeat center center/cover;
+      }
+
+      .box-42 {
+        background: url("./img/woods/dark10.jpg") no-repeat center center/cover;
+      }
+
+      .box-44 {
+        background: url("./img/woods/dark11.jpg") no-repeat center center/cover;
+      }
+
+      .box-45 {
+        background: url("./img/woods/dark12.jpg") no-repeat center center/cover;
+      }
+
+      .box-47 {
+        background: url("./img/woods/dark13.jpg") no-repeat center center/cover;
+      }
+
+      .box-48 {
+        background: url("./img/woods/dark14.jpg") no-repeat center center/cover;
+      }
+
+      .box-50 {
+        background: url("./img/woods/dark15.jpg") no-repeat center center/cover;
+      }
+
+      .box-51 {
+        background: url("./img/woods/dark16.jpg") no-repeat center center/cover;
+      }
+
+      .box-53 {
+        background: url("./img/woods/dark17.jpg") no-repeat center center/cover;
+      }
+
+      .box-54 {
+        background: url("./img/woods/dark18.jpg") no-repeat center center/cover;
+      }
+
+      .box-55 {
+        background: url("./img/woods/dark19.jpg") no-repeat center center/cover;
+      }
+
+      .box-31 {
+        background: url("./img/woods/wolf.jpg") no-repeat center center/cover;
+      }
+
+      .box-34 {
+        border: solid 1px darkorchid;
+        color: darkorchid;
+        text-align: center;
+        padding-top: 60%;
+        font-size: 2vh;
+        position: relative;
+        background: url("./img/woods/strange.mushroom.jpg") no-repeat center
+          center/cover;
+        opacity: 0.9;
+      }
+
+      .box-37 {
+        background: url("./img/woods/dinosaur.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-40 {
+        background: url("./img/woods/grandma\ house.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-43 {
+        background: url("./img/woods/Lilith.jpg") no-repeat center center/cover;
+      }
+
+      .box-46 {
+        background: url("./img/woods/good.fairy.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-49 {
+        background: url("./img/woods/fallen-tree.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-52 {
+        background: url("./img/woods/entprotector.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-56 {
+        background: url("./img/woods/bad.fairy.jpg") no-repeat center
+          center/cover;
+      }
+
+      /* *********************************************************************************************************************** */
+
+      .box-57 {
+        background: url("./img/lake/lake1.jpg") no-repeat center center/cover;
+      }
+
+      .box-58 {
+        background: url("./img/lake/lake2.jpg") no-repeat center center/cover;
+      }
+
+      .box-59 {
+        background: url("./img/lake/lake3.jpg") no-repeat center center/cover;
+      }
+
+      .box-61 {
+        background: url("./img/lake/lake4.jpg") no-repeat center center/cover;
+      }
+
+      .box-62 {
+        background: url("./img/lake/lake5.jpg") no-repeat center center/cover;
+      }
+
+      .box-64 {
+        background: url("./img/lake/lake6.jpg") no-repeat center center/cover;
+      }
+
+      .box-65 {
+        background: url("./img/lake/lake7.jpg") no-repeat center center/cover;
+      }
+
+      .box-67 {
+        background: url("./img/lake/lake8.jpg") no-repeat center center/cover;
+      }
+
+      .box-68 {
+        background: url("./img/lake/lake9.jpg") no-repeat center center/cover;
+      }
+
+      .box-70 {
+        background: url("./img/lake/lake10.jpg") no-repeat center center/cover;
+      }
+
+      .box-71 {
+        background: url("./img/lake/lake11.jpg") no-repeat center center/cover;
+      }
+
+      .box-73 {
+        background: url("./img/lake/lake12.jpg") no-repeat center center/cover;
+      }
+
+      .box-74 {
+        background: url("./img/lake/lake13.jpg") no-repeat center center/cover;
+      }
+
+      .box-76 {
+        background: url("./img/lake/lake14.jpg") no-repeat center center/cover;
+      }
+
+      .box-77 {
+        background: url("./img/lake/lake15.jpg") no-repeat center center/cover;
+      }
+
+      .box-79 {
+        background: url("./img/lake/lake16.jpg") no-repeat center center/cover;
+      }
+
+      .box-80 {
+        background: url("./img/lake/lake17.jpg") no-repeat center center/cover;
+      }
+
+      .box-82 {
+        background: url("./img/lake/lake18.jpg") no-repeat center center/cover;
+      }
+
+      .box-83 {
+        background: url("./img/lake/lake19.jpg") no-repeat center center/cover;
+      }
+
+      .box-60 {
+        background: url("./img/lake/sail.board.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-63 {
+        background: url("./img/lake/island.jpeg") no-repeat center center/cover;
+      }
+
+      .box-66 {
+        background: url("./img/lake/ruins1.jpg") no-repeat center center/cover;
+      }
+
+      .box-69 {
+        background: url("./img/lake/Tornado.jpg") no-repeat center center/cover;
+      }
+
+      .box-72 {
+        background: url("./img/lake/ruins2.jpg") no-repeat center center/cover;
+      }
+
+      .box-75 {
+        background: url("./img/lake/hydra.jpg") no-repeat center center/cover;
+      }
+
+      .box-78 {
+        background: url("./img/lake/ruins4.jpg") no-repeat center center/cover;
+      }
+
+      .box-81 {
+        background: url("./img/lake/kraken.jpg") no-repeat center center/cover;
+      }
+
+      .box-84 {
+        background: url("./img/lake/waterguardian.jpg") no-repeat center
+          center/cover;
+      }
+
+      /* *********************************************************************************************************************************************************************************** */
+
+      .box-85 {
+        background: url("./img/alabastra/winter1.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-86 {
+        background: url("./img/alabastra/winter2.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-88 {
+        background: url("./img/alabastra/winter3.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-89 {
+        background: url("./img/alabastra/winter4.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-91 {
+        background: url("./img/alabastra/winter5.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-92 {
+        background: url("./img/alabastra/winter6.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-94 {
+        background: url("./img/alabastra/winter7.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-95 {
+        background: url("./img/alabastra/winter8.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-97 {
+        background: url("./img/alabastra/winter9.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-98 {
+        background: url("./img/alabastra/winter10.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-100 {
+        background: url("./img/alabastra/winter11.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-101 {
+        background: url("./img/alabastra/winter12.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-103 {
+        background: url("./img/alabastra/winter13.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-104 {
+        background: url("./img/alabastra/winter14.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-106 {
+        background: url("./img/alabastra/winter15.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-107 {
+        background: url("./img/alabastra/winter16.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-109 {
+        background: url("./img/alabastra/winter17.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-110 {
+        background: url("./img/alabastra/winter18.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-111 {
+        background: url("./img/alabastra/winter19.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-87 {
+        background: url("./img/alabastra/ice.golem.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-90 {
+        background: url("./img/alabastra/blizzard.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-93 {
+        background: url("./img/alabastra/snowleopard.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-96 {
+        background: url("./img/alabastra/northernlights.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-99 {
+        background: url("./img/alabastra/ice.break.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-102 {
+        background: url("./img/alabastra/snowman.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-105 {
+        background: url("./img/alabastra/frost.lion.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-108 {
+        background: url("./img/alabastra/ice.knight.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-112 {
+        background: url("./img/alabastra/ice.dragon.seregost.jpeg") no-repeat
+          center center/cover;
+      }
+
+      /* ***************************************************************************************************************************************************************************************************************************** */
+
+      .box-113 {
+        background: url("./img/fire/fire1.jpg") no-repeat center center/cover;
+      }
+
+      .box-114 {
+        background: url("./img/fire/fire2.jpg") no-repeat center center/cover;
+      }
+
+      .box-116 {
+        background: url("./img/fire/fire3.jpg") no-repeat center center/cover;
+      }
+
+      .box-117 {
+        background: url("./img/fire/fire4.jpg") no-repeat center center/cover;
+      }
+
+      .box-119 {
+        background: url("./img/fire/fire5.jpg") no-repeat center center/cover;
+      }
+
+      .box-120 {
+        background: url("./img/fire/fire6.jpg") no-repeat center center/cover;
+      }
+
+      .box-122 {
+        background: url("./img/fire/fire7.jpg") no-repeat center center/cover;
+      }
+
+      .box-123 {
+        background: url("./img/fire/fire8.jpg") no-repeat center center/cover;
+      }
+
+      .box-125 {
+        background: url("./img/fire/fire9.jpg") no-repeat center center/cover;
+      }
+
+      .box-126 {
+        background: url("./img/fire/fire10.jpg") no-repeat center center/cover;
+      }
+
+      .box-128 {
+        background: url("./img/fire/lava.bridge.png") no-repeat center
+          center/cover;
+      }
+
+      .box-129 {
+        background: url("./img/fire/fire11.jpg") no-repeat center center/cover;
+      }
+
+      .box-131 {
+        background: url("./img/fire/fire12.jpg") no-repeat center center/cover;
+      }
+
+      .box-132 {
+        background: url("./img/fire/fire13.jpg") no-repeat center center/cover;
+      }
+
+      .box-134 {
+        background: url("./img/fire/fire14.jpg") no-repeat center center/cover;
+      }
+
+      .box-135 {
+        background: url("./img/fire/fire15.jpg") no-repeat center center/cover;
+      }
+
+      .box-137 {
+        background: url("./img/fire/fire16.jpg") no-repeat center center/cover;
+      }
+
+      .box-138 {
+        background: url("./img/fire/fire17.jpg") no-repeat center center/cover;
+      }
+
+      .box-139 {
+        background: url("./img/fire/fire18.jpg") no-repeat center center/cover;
+      }
+
+      .box-115 {
+        background: url("./img/fire/Phoenix.png") no-repeat center center/cover;
+      }
+
+      .box-118 {
+        background: url("./img/fire/warg.jpg") no-repeat center center/cover;
+      }
+
+      .box-121 {
+        background: url("./img/fire/fire.break2.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-124 {
+        background: url("./img/fire/Leonidas.jpg") no-repeat center center/cover;
+      }
+
+      .box-127 {
+        background: url("./img/fire/Cerberus.jpeg") no-repeat center
+          center/cover;
+      }
+
+      .box-130 {
+        background: url("./img/fire/fire.break.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-133 {
+        background: url("./img/fire/fire.ghost.jpg") no-repeat center
+          center/cover;
+      }
+
+      .box-136 {
+        background: url("./img/fire/golem.jpg") no-repeat center center/cover;
+      }
+
+      .box-140 {
+        background: url("./img/fire/Samael.jpg") no-repeat center center/cover;
+      }
+
+      .box-141 {
+        grid-column: 6 / 8;
+        grid-row: 6/ 8;
+        background: url("./img/fire/Balrog the Ashbringer.jpg") no-repeat center
+          center/cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box-34">
+        <h5 class="h1">34</h5>
+        <h5 class="h2">34</h5>
+        <i class="fas fa-arrow-down"></i>
+        <h5 class="h3">34</h5>
+        <h5 class="h4">34</h5>
+      </div>
+      <div class="woods box-33"><h4>33</h4></div>
+      <div class="woods box-32"><h4>32</h4></div>
+      <div class="woods box-31">
+        <h5 class="h1">31</h5>
+        <h5 class="h2">31</h5>
+        <h5 class="h3">31</h5>
+        <h5 class="h4">31</h5>
+      </div>
+      <div class="woods box-30"><h4>30</h4></div>
+      <div class="woods box-29"><h4>29</h4></div>
+      <div class="ithilien box-28">
+        <h5 class="h1">28</h5>
+        <h5 class="h2">28</h5>
+        <h5 class="h3">28</h5>
+        <h5 class="h4">28</h5>
+      </div>
+      <div class="ithilien box-27"><h4>27</h4></div>
+      <div class="ithilien box-26">
+        <h5 class="h1">26</h5>
+        <h5 class="h2">26</h5>
+        <h5 class="h3">26</h5>
+        <h5 class="h4">26</h5>
+      </div>
+      <div class="ithilien box-25"><h4>25</h4></div>
+      <div class="ithilien box-24"><h4>24</h4></div>
+      <div class="ithilien box-23">
+        <h5 class="h1">23</h5>
+        <h5 class="h2">23</h5>
+        <i class="fas fa-arrow-left"></i>
+        <h5 class="h3">23</h5>
+        <h5 class="h4">23</h5>
+      </div>
+      <div class="woods box-35"><h4>35</h4></div>
+      <div class="lake box-72">
+        <h5 class="h1">72</h5>
+        <h5 class="h2">72</h5>
+        <i class="fas fa-arrow-down"></i>
+        <h5 class="h3">72</h5>
+        <h5 class="h4">72</h5>
+      </div>
+      <div class="lake box-71"><h4>71</h4></div>
+      <div class="lake box-70"><h4>70</h4></div>
+      <div class="lake box-69">
+        <h5 class="h1">69</h5>
+        <h5 class="h2">69</h5>
+        <h5 class="h3">69</h5>
+        <h5 class="h4">69</h5>
+      </div>
+      <div class="lake box-68"><h4>68</h4></div>
+      <div class="lake box-67"><h4>67</h4></div>
+      <div class="lake box-66">
+        <h5 class="h1">66</h5>
+        <h5 class="h2">66</h5>
+        <h5 class="h3">66</h5>
+        <h5 class="h4">66</h5>
+      </div>
+      <div class="lake box-65"><h4>65</h4></div>
+      <div class="lake box-64"><h4>64</h4></div>
+      <div class="lake box-63">
+        <h5 class="h1">63</h5>
+        <h5 class="h2">63</h5>
+        <i class="fas fa-arrow-left"></i>
+        <h5 class="h3">63</h5>
+        <h5 class="h4">63</h5>
+      </div>
+      <div class="ithilien box-22"><h4>22</h4></div>
+      <div class="woods box-36"><h4>36</h4></div>
+      <div class="lake box-73"><h4>73</h4></div>
+      <div class="alabastra large box-102">
+        <h5 class="h1">102</h5>
+        <h5 class="h2">102</h5>
+        <i class="fas fa-arrow-down"></i>
+        <h5 class="h3">102</h5>
+        <h5 class="h4">102</h5>
+      </div>
+      <div class="alabastra large box-101"><h4>101</h4></div>
+      <div class="alabastra large box-100"><h4>100</h4></div>
+      <div class="alabastra box-99">
+        <h5 class="h1">99</h5>
+        <h5 class="h2">99</h5>
+        <h5 class="h3">99</h5>
+        <h5 class="h4">99</h5>
+      </div>
+      <div class="alabastra box-98">98</div>
+      <div class="alabastra box-97"><h4>97</h4></div>
+      <div class="alabastra box-96">
+        <h5 class="h1">96</h5>
+        <h5 class="h2">96</h5>
+        <h5 class="h3">96</h5>
+        <h5 class="h4">96</h5>
+      </div>
+      <div class="alabastra box-95">
+        <i class="fas fa-arrow-left"></i>
+        <h4>95</h4>
+      </div>
+      <div class="lake box-62">62</div>
+      <div class="ithilien box-21"><h4>21</h4></div>
+      <div class="woods box-37">
+        <h5 class="h1">37</h5>
+        <h5 class="h2">37</h5>
+        <h5 class="h3">37</h5>
+        <h5 class="h4">37</h5>
+      </div>
+      <div class="lake box-74"><h4>74</h4></div>
+      <div class="alabastra large box-103"><h4>103</h4></div>
+      <div class="fire large box-124">
+        <h5 class="h1">124</h5>
+        <h5 class="h2">124</h5>
+        <i class="fas fa-arrow-down"></i>
+        <h5 class="h3">124</h5>
+        <h5 class="h4">124</h5>
+      </div>
+      <div class="fire large box-123"><h4>123</h4></div>
+      <div class="fire large box-122"><h4>122</h4></div>
+      <div class="fire large box-121">
+        <h5 class="h1">121</h5>
+        <h5 class="h2">121</h5>
+        <h5 class="h3">121</h5>
+        <h5 class="h4">121</h5>
+      </div>
+      <div class="fire large box-120"><h4>120</h4></div>
+      <div class="fire large box-119">
+        <i class="fas fa-arrow-left"></i>
+        <h4>119</h4>
+      </div>
+      <div class="alabastra box-94"><h4>94</h4></div>
+      <div class="lake box-61"><h4>61</h4></div>
+      <div class="ithilien box-20">
+        <h5 class="h1">20</h5>
+        <h5 class="h2">20</h5>
+        <h5 class="h3">20</h5>
+        <h5 class="h4">20</h5>
+      </div>
+      <div class="woods box-38"><h4>38</h4></div>
+      <div class="lake box-75">
+        <h5 class="h1">75</h5>
+        <h5 class="h2">75</h5>
+        <h5 class="h3">75</h5>
+        <h5 class="h4">75</h5>
+      </div>
+      <div class="alabastra large box-104"><h4>104</h4></div>
+      <div class="fire large box-125"><h4>125</h4></div>
+      <div class="fire large box-138">
+        <i class="fas fa-arrow-down"></i>
+        <h4>138</h4>
+      </div>
+      <div class="fire large box-137"><h4>137</h4></div>
+      <div class="fire large box-136">
+        <h5 class="h1">136</h5>
+        <h5 class="h2">136</h5>
+        <h5 class="h3">136</h5>
+        <h5 class="h4">136</h5>
+      </div>
+      <div class="fire large box-135">
+        <i class="fas fa-arrow-left"></i>
+        <h4>135</h4>
+      </div>
+      <div class="fire large box-118">
+        <h5 class="h1">118</h5>
+        <h5 class="h2">118</h5>
+        <h5 class="h3">118</h5>
+        <h5 class="h4">118</h5>
+      </div>
+      <div class="alabastra box-93">
+        <h5 class="h1">93</h5>
+        <h5 class="h2">93</h5>
+        <h5 class="h3">93</h5>
+        <h5 class="h4">93</h5>
+      </div>
+      <div class="lake box-60">
+        <h5 class="h1">60</h5>
+        <h5 class="h2">60</h5>
+        <h5 class="h3">60</h5>
+        <h5 class="h4">60</h5>
+      </div>
+      <div class="ithilien box-19"><h4>19</h4></div>
+      <div class="woods box-39"><h4>39</h4></div>
+      <div class="lake box-76"><h4>76</h4></div>
+      <div class="alabastra large box-105">
+        <h5 class="h1">105</h5>
+        <h5 class="h2">105</h5>
+        <h5 class="h3">105</h5>
+        <h5 class="h4">105</h5>
+      </div>
+      <div class="fire large box-126"><h4>126</h4></div>
+      <div class="fire large box-139"><h4>139</h4></div>
+      <div class="fire box-141"></div>
+      <div class="fire large box-134"><h4>134</h4></div>
+      <div class="fire large box-117"><h4>117</h4></div>
+      <div class="alabastra box-92"><h4>92</h4></div>
+      <div class="lake box-59"><h4>59</h4></div>
+      <div class="ithilien box-18"><h4>18</h4></div>
+      <div class="woods box-40">
+        <h5 class="h1">40</h5>
+        <h5 class="h2">40</h5>
+        <h5 class="h3">40</h5>
+        <h5 class="h4">40</h5>
+      </div>
+      <div class="lake box-77"><h4>77</h4></div>
+      <div class="alabastra large box-106"><h4>106</h4></div>
+      <div class="fire large box-127">
+        <h5 class="h1">127</h5>
+        <h5 class="h2">127</h5>
+        <h5 class="h3">127</h5>
+        <h5 class="h4">127</h5>
+      </div>
+      <div class="fire large box-140">
+        <h5 class="h1">140</h5>
+        <h5 class="h2">140</h5>
+        <i class="fas fa-arrow-right"></i>
+        <h5 class="h3">140</h5>
+        <h5 class="h4">140</h5>
+      </div>
+      <div class="fire large box-133">
+        <h5 class="h1">133</h5>
+        <h5 class="h2">133</h5>
+        <h5 class="h3">133</h5>
+        <h5 class="h4">133</h5>
+      </div>
+      <div class="fire large box-116"><h4>116</h4></div>
+      <div class="alabastra box-91"><h4>91</h4></div>
+      <div class="lake box-58"><h4>58</h4></div>
+      <div class="ithilien box-17">
+        <h5 class="h1">17</h5>
+        <h5 class="h2">17</h5>
+        <h5 class="h3">17</h5>
+        <h5 class="h4">17</h5>
+      </div>
+      <div class="woods box-41"><h4>41</h4></div>
+      <div class="lake box-78">
+        <h5 class="h1">78</h5>
+        <h5 class="h2">78</h5>
+        <h5 class="h3">78</h5>
+        <h5 class="h4">78</h5>
+      </div>
+      <div class="alabastra large box-107"><h4>107</h4></div>
+      <div class="fire large box-128">
+        <i class="fas fa-arrow-right"></i>
+        <h4>128</h4>
+      </div>
+      <div class="fire large box-129"><h4>129</h4></div>
+      <div class="fire large box-130">
+        <h5 class="h1">130</h5>
+        <h5 class="h2">130</h5>
+        <h5 class="h3">130</h5>
+        <h5 class="h4">130</h5>
+      </div>
+      <div class="fire large box-131"><h4>131</h4></div>
+      <div class="fire large box-132">
+        <i class="fas fa-arrow-up"></i>
+        <h4>132</h4>
+      </div>
+      <div class="fire large box-115">
+        <h5 class="h1">115</h5>
+        <h5 class="h2">115</h5>
+        <h5 class="h3">115</h5>
+        <h5 class="h4">115</h5>
+      </div>
+      <div class="alabastra box-90">
+        <h5 class="h1">90</h5>
+        <h5 class="h2">90</h5>
+        <h5 class="h3">90</h5>
+        <h5 class="h4">90</h5>
+      </div>
+      <div class="lake box-57"><h4>57</h4></div>
+      <div class="ithilien box-16"><h4>16</h4></div>
+      <div class="woods box-42"><h4>42</h4></div>
+      <div class="lake box-79"><h4>79</h4></div>
+      <div class="alabastra large box-108">
+        <h5 class="h1">108</h5>
+        <h5 class="h2">108</h5>
+        <i class="fas fa-arrow-right"></i>
+        <h5 class="h3">108</h5>
+        <h5 class="h4">108</h5>
+      </div>
+      <div class="alabastra large box-109"><h4>109</h4></div>
+      <div class="alabastra large box-110"><h4>110</h4></div>
+      <div class="alabastra large box-111"><h4>111</h4></div>
+      <div class="alabastra large box-112">
+        <h5 class="h1">112</h5>
+        <h5 class="h2">112</h5>
+        <h5 class="h3">112</h5>
+        <h5 class="h4">112</h5>
+      </div>
+      <div class="fire large box-113"><h4>113</h4></div>
+      <div class="fire large box-114">
+        <i class="fas fa-arrow-up"></i>
+        <h4>114</h4>
+      </div>
+      <div class="alabastra box-89"><h4>89</h4></div>
+      <div class="woods box-56">
+        <h5 class="h1">56</h5>
+        <h5 class="h2">56</h5>
+        <h5 class="h3">56</h5>
+        <h5 class="h4">56</h5>
+      </div>
+      <div class="ithilien box-15"><h4>15</h4></div>
+      <div class="woods box-43">
+        <h5 class="h1">43</h5>
+        <h5 class="h2">43</h5>
+        <h5 class="h3">43</h5>
+        <h5 class="h4">43</h5>
+      </div>
+      <div class="lake box-80">
+        <i class="fas fa-arrow-right"></i>
+        <h4>80</h4>
+      </div>
+      <div class="lake box-81">
+        <h5 class="h1">81</h5>
+        <h5 class="h2">81</h5>
+        <h5 class="h3">81</h5>
+        <h5 class="h4">81</h5>
+      </div>
+      <div class="lake box-82"><h4>82</h4></div>
+      <div class="lake box-83"><h4>83</h4></div>
+      <div class="lake box-84">
+        <h5 class="h1">84</h5>
+        <h5 class="h2">84</h5>
+        <h5 class="h3">84</h5>
+        <h5 class="h4">84</h5>
+      </div>
+      <div class="alabastra box-85"><h4>85</h4></div>
+      <div class="alabastra box-86"><h4>86</h4></div>
+      <div class="alabastra box-87">
+        <h5 class="h1">87</h5>
+        <h5 class="h2">87</h5>
+        <h5 class="h3">87</h5>
+        <h5 class="h4">87</h5>
+      </div>
+      <div class="alabastra box-88">
+        <i class="fas fa-arrow-up"></i>
+        <h4>88</h4>
+      </div>
+      <div class="woods box-55"><h4>55</h4></div>
+      <div class="ithilien box-14">
+        <h5 class="h1">14</h5>
+        <h5 class="h2">14</h5>
+        <h5 class="h3">14</h5>
+        <h5 class="h4">14</h5>
+      </div>
+      <div class="woods box-44">
+        <i class="fas fa-arrow-right"></i>
+        <h4>44</h4>
+      </div>
+      <div class="woods box-45"><h4>45</h4></div>
+      <div class="woods box-46">
+        <h5 class="h1">46</h5>
+        <h5 class="h2">46</h5>
+        <h5 class="h3">46</h5>
+        <h5 class="h4">46</h5>
+      </div>
+      <div class="woods box-47"><h4>47</h4></div>
+      <div class="woods box-48"><h4>48</h4></div>
+      <div class="woods box-49">
+        <h5 class="h1">49</h5>
+        <h5 class="h2">49</h5>
+        <h5 class="h3">49</h5>
+        <h5 class="h4">49</h5>
+      </div>
+      <div class="woods box-50"><h4>50</h4></div>
+      <div class="woods box-51"><h4>51</h4></div>
+      <div class="woods box-52">
+        <h5 class="h1">52</h5>
+        <h5 class="h2">52</h5>
+        <h5 class="h3">52</h5>
+        <h5 class="h4">52</h5>
+      </div>
+      <div class="woods box-53"><h4>53</h4></div>
+      <div class="woods box-54">
+        <i class="fas fa-arrow-up"></i>
+        <h4>54</h4>
+      </div>
+      <div class="ithilien box-13"><h4>13</h4></div>
+      <div class="ithilien box-1"><h4>1</h4></div>
+      <div class="ithilien box-2"><h4>2</h4></div>
+      <div class="ithilien box-3"><h4>3</h4></div>
+      <div class="ithilien box-4"><h4>4</h4></div>
+      <div class="ithilien box-5">
+        <h5 class="h1">5</h5>
+        <h5 class="h2">5</h5>
+        <h5 class="h3">5</h5>
+        <h5 class="h4">5</h5>
+      </div>
+      <div class="ithilien box-6"><h4>6</h4></div>
+      <div class="ithilien box-7"><h4>7</h4></div>
+      <div class="ithilien box-8">
+        <h5 class="h1">8</h5>
+        <h5 class="h2">8</h5>
+        <h5 class="h3">8</h5>
+        <h5 class="h4">8</h5>
+      </div>
+      <div class="ithilien box-9"><h4>9</h4></div>
+      <div class="ithilien box-10"><h4>10</h4></div>
+      <div class="ithilien box-11">
+        <h5 class="h1">11</h5>
+        <h5 class="h2">11</h5>
+        <h5 class="h3">11</h5>
+        <h5 class="h4">11</h5>
+      </div>
+      <div class="ithilien box-12">
+        <i class="fas fa-arrow-up"></i>
+        <h4>12</h4>
+      </div>
+    </div>
+  </body>
+</html>
