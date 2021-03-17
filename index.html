@@ -28,126 +28,167 @@
       }
 
       .container {
-        width: 99vh;
-        height: 99vh;
-        margin: 0.5vh auto;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(12, 1fr);
+        width: 7200px;
+        height: 7200px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .top {
+        width: 7200px;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 25%;
+      }
+
+      .middle {
+        width: 7200px;
+        display: flex;
+      }
+
+      .left {
+        width: 6000px;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 25%;
+      }
+
+      .dragon {
+        width: 1200px;
+        height: 1200px;
+      }
+
+      .right {
+        width: 6000px;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 25%;
+      }
+
+      .bottom {
+        width: 7200px;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 25%;
+      }
+
+      .box {
+        width: 600px;
+        height: 600px;
       }
 
       .h1,
       .h2,
       .h3,
       .h4 {
-        font-size: 0.7rem;
+        font-size: 3.2rem;
+      }
+
+      h4 {
+        font-size: 4rem;
+        margin-top: 80%;
       }
 
       .large h4 {
-        font-size: 0.9rem;
+        font-size: 3.5rem;
       }
 
       .large .h1,
       .large .h2,
       .large .h3,
       .large .h4 {
-        font-size: 0.7rem;
+        font-size: 3rem;
       }
 
       .ithilien {
-        border: solid 1px #93cb52;
+        border: solid 3px #93cb52;
         color: #93cb52;
         text-align: center;
-        padding-top: 60%;
-        font-size: 1.7vh;
         position: relative;
       }
 
       .woods {
-        border: solid 1px darkorchid;
+        border: solid 3px darkorchid;
         color: darkorchid;
         text-align: center;
-        padding-top: 60%;
-        font-size: 1.7vh;
         position: relative;
       }
 
       .lake {
-        border: solid 1px skyblue;
+        border: solid 3px skyblue;
         color: skyblue;
         text-align: center;
-        padding-top: 60%;
-        font-size: 1.7vh;
         position: relative;
       }
 
       .alabastra {
-        border: solid 1px blue;
+        border: solid 3px blue;
         color: blue;
         text-align: center;
-        padding-top: 60%;
-        font-size: 1.7vh;
         position: relative;
       }
 
       .fire {
-        border: solid 1px orangered;
+        border: solid 3px orangered;
         color: orangered;
         text-align: center;
-        padding-top: 60%;
-        font-size: 1.7vh;
         position: relative;
       }
 
       .fa-arrow-up {
         background: transparent;
         position: absolute;
-        top: 20px;
-        left: 27px;
+        font-size: 4rem;
+        top: 40%;
+        left: 45%;
       }
 
       .fa-arrow-left {
         background: transparent;
         position: absolute;
-        top: 25px;
-        left: 27px;
+        font-size: 4rem;
+        top: 40%;
+        left: 45%;
       }
 
       .fa-arrow-down {
         background: transparent;
         position: absolute;
-        top: 25px;
-        left: 27px;
+        font-size: 4rem;
+        top: 40%;
+        left: 45%;
       }
 
       .fa-arrow-right {
         background: transparent;
         position: absolute;
-        top: 25px;
-        left: 27px;
+        font-size: 4rem;
+        top: 40%;
+        left: 45%;
       }
 
       .h1 {
         position: absolute;
-        top: 3px;
-        left: 7px;
+        top: 7px;
+        left: 14px;
       }
 
       .h2 {
         position: absolute;
-        top: 3px;
-        right: 7px;
+        top: 7px;
+        right: 14px;
       }
 
       .h3 {
         position: absolute;
-        bottom: 3px;
-        left: 7px;
+        bottom: 7px;
+        left: 14px;
       }
       .h4 {
         position: absolute;
-        bottom: 3px;
-        right: 7px;
+        bottom: 7px;
+        right: 14px;
       }
 
       .box-1 {
@@ -246,8 +287,8 @@
       }
 
       .box-5 {
-        background: url("./img/plains/firelion.jpg") no-repeat center
-          center/cover;
+        background: url("./img/plains/firelion.jpg") no-repeat center 20% /
+          cover;
       }
 
       .box-8 {
@@ -271,8 +312,7 @@
       }
 
       .box-20 {
-        background: url("./img/plains/Thieves.jpg") no-repeat center
-          center/cover;
+        background: url("./img/plains/Thieves.jpg") no-repeat center 5% / cover;
       }
 
       .box-23 {
@@ -322,7 +362,7 @@
       }
 
       .box-41 {
-        background: url("./img/woods/dark9.jpg") no-repeat center center/cover;
+        background: url("./img/woods/dark9.jpg") no-repeat center center/ auto;
       }
 
       .box-42 {
@@ -370,20 +410,13 @@
       }
 
       .box-34 {
-        border: solid 1px darkorchid;
-        color: darkorchid;
-        text-align: center;
-        padding-top: 60%;
-        font-size: 1.7vh;
-        position: relative;
         background: url("./img/woods/strange.mushroom.jpg") no-repeat center
           center/cover;
         opacity: 0.9;
       }
 
       .box-37 {
-        background: url("./img/woods/dinosaur.jpg") no-repeat center
-          center/cover;
+        background: url("./img/woods/dinosaur.jpg") no-repeat 25% center/cover;
       }
 
       .box-40 {
@@ -511,7 +544,7 @@
       }
 
       .box-72 {
-        background: url("./img/lake/ruins2.jpg") no-repeat center center/cover;
+        background: url("./img/lake/ruins5.jpg") no-repeat center center/cover;
       }
 
       .box-75 {
@@ -527,7 +560,7 @@
       }
 
       .box-84 {
-        background: url("./img/lake/waterguardian.jpg") no-repeat center
+        background: url("./img/lake/waterguardian.jpg") no-repeat 10%
           center/cover;
       }
 
@@ -654,7 +687,7 @@
       }
 
       .box-102 {
-        background: url("./img/alabastra/snowman.jpg") no-repeat center
+        background: url("./img/alabastra/snowman.jpg") no-repeat 75%
           center/cover;
       }
 
@@ -664,8 +697,8 @@
       }
 
       .box-108 {
-        background: url("./img/alabastra/ice.knight.jpg") no-repeat center
-          center/cover;
+        background: url("./img/alabastra/ice.knight.jpg") no-repeat center 15% /
+          cover;
       }
 
       .box-112 {
@@ -766,12 +799,11 @@
       }
 
       .box-124 {
-        background: url("./img/fire/Leonidas.jpg") no-repeat center center/cover;
+        background: url("./img/fire/Leonidas.jpg") no-repeat center 0% / cover;
       }
 
       .box-127 {
-        background: url("./img/fire/Cerberus.jpeg") no-repeat center
-          center/cover;
+        background: url("./img/fire/Cerberus.jpeg") no-repeat 90% center/cover;
       }
 
       .box-130 {
@@ -793,424 +825,434 @@
       }
 
       .box-141 {
-        grid-column: 6 / 8;
-        grid-row: 6/ 8;
-        background: url("./img/fire/Balrog the Ashbringer.jpg") no-repeat center
-          center/cover;
+        background: url("./img/fire/Balrog\ the\ Ashbringer2.jpg") no-repeat
+          center 30% / cover;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="box-34">
-        <h5 class="h1">34</h5>
-        <h5 class="h2">34</h5>
-        <i class="fas fa-arrow-down"></i>
-        <h5 class="h3">34</h5>
-        <h5 class="h4">34</h5>
+      <div class="top">
+        <div class="box-34 box woods">
+          <h5 class="h1">34</h5>
+          <h5 class="h2">34</h5>
+          <i class="fas fa-arrow-down"></i>
+          <h5 class="h3">34</h5>
+          <h5 class="h4">34</h5>
+        </div>
+        <div class="woods box-33 box"><h4>33</h4></div>
+        <div class="woods box-32 box"><h4>32</h4></div>
+        <div class="woods box-31 box">
+          <h5 class="h1">31</h5>
+          <h5 class="h2">31</h5>
+          <h5 class="h3">31</h5>
+          <h5 class="h4">31</h5>
+        </div>
+        <div class="woods box-30 box"><h4>30</h4></div>
+        <div class="woods box-29 box"><h4>29</h4></div>
+        <div class="ithilien box-28 box">
+          <h5 class="h1">28</h5>
+          <h5 class="h2">28</h5>
+          <h5 class="h3">28</h5>
+          <h5 class="h4">28</h5>
+        </div>
+        <div class="ithilien box-27 box"><h4>27</h4></div>
+        <div class="ithilien box-26 box">
+          <h5 class="h1">26</h5>
+          <h5 class="h2">26</h5>
+          <h5 class="h3">26</h5>
+          <h5 class="h4">26</h5>
+        </div>
+        <div class="ithilien box-25 box"><h4>25</h4></div>
+        <div class="ithilien box-24 box"><h4>24</h4></div>
+        <div class="ithilien box-23 box">
+          <h5 class="h1">23</h5>
+          <h5 class="h2">23</h5>
+          <i class="fas fa-arrow-left"></i>
+          <h5 class="h3">23</h5>
+          <h5 class="h4">23</h5>
+        </div>
+        <div class="woods box-35 box"><h4>35</h4></div>
+        <div class="lake box-72 box">
+          <h5 class="h1">72</h5>
+          <h5 class="h2">72</h5>
+          <i class="fas fa-arrow-down"></i>
+          <h5 class="h3">72</h5>
+          <h5 class="h4">72</h5>
+        </div>
+        <div class="lake box-71 box"><h4>71</h4></div>
+        <div class="lake box-70 box"><h4>70</h4></div>
+        <div class="lake box-69 box">
+          <h5 class="h1">69</h5>
+          <h5 class="h2">69</h5>
+          <h5 class="h3">69</h5>
+          <h5 class="h4">69</h5>
+        </div>
+        <div class="lake box-68 box"><h4>68</h4></div>
+        <div class="lake box-67 box"><h4>67</h4></div>
+        <div class="lake box-66 box">
+          <h5 class="h1">66</h5>
+          <h5 class="h2">66</h5>
+          <h5 class="h3">66</h5>
+          <h5 class="h4">66</h5>
+        </div>
+        <div class="lake box-65 box"><h4>65</h4></div>
+        <div class="lake box-64 box"><h4>64</h4></div>
+        <div class="lake box-63 box">
+          <h5 class="h1">63</h5>
+          <h5 class="h2">63</h5>
+          <i class="fas fa-arrow-left"></i>
+          <h5 class="h3">63</h5>
+          <h5 class="h4">63</h5>
+        </div>
+        <div class="ithilien box-22 box"><h4>22</h4></div>
+        <div class="woods box-36 box"><h4>36</h4></div>
+        <div class="lake box-73 box"><h4>73</h4></div>
+        <div class="alabastra large box-102 box">
+          <h5 class="h1">102</h5>
+          <h5 class="h2">102</h5>
+          <i class="fas fa-arrow-down"></i>
+          <h5 class="h3">102</h5>
+          <h5 class="h4">102</h5>
+        </div>
+        <div class="alabastra large box-101 box"><h4>101</h4></div>
+        <div class="alabastra large box-100 box"><h4>100</h4></div>
+        <div class="alabastra box-99 box">
+          <h5 class="h1">99</h5>
+          <h5 class="h2">99</h5>
+          <h5 class="h3">99</h5>
+          <h5 class="h4">99</h5>
+        </div>
+        <div class="alabastra box-98 box"><h4>98</h4></div>
+        <div class="alabastra box-97 box"><h4>97</h4></div>
+        <div class="alabastra box-96 box">
+          <h5 class="h1">96</h5>
+          <h5 class="h2">96</h5>
+          <h5 class="h3">96</h5>
+          <h5 class="h4">96</h5>
+        </div>
+        <div class="alabastra box-95 box">
+          <i class="fas fa-arrow-left"></i>
+          <h4>95</h4>
+        </div>
+        <div class="lake box-62 box"><h4>62</h4></div>
+        <div class="ithilien box-21 box"><h4>21</h4></div>
+        <div class="woods box-37 box">
+          <h5 class="h1">37</h5>
+          <h5 class="h2">37</h5>
+          <h5 class="h3">37</h5>
+          <h5 class="h4">37</h5>
+        </div>
+        <div class="lake box-74 box"><h4>74</h4></div>
+        <div class="alabastra large box-103 box"><h4>103</h4></div>
+        <div class="fire large box-124 box">
+          <h5 class="h1">124</h5>
+          <h5 class="h2">124</h5>
+          <i class="fas fa-arrow-down"></i>
+          <h5 class="h3">124</h5>
+          <h5 class="h4">124</h5>
+        </div>
+        <div class="fire large box-123 box"><h4>123</h4></div>
+        <div class="fire large box-122 box"><h4>122</h4></div>
+        <div class="fire large box-121 box">
+          <h5 class="h1">121</h5>
+          <h5 class="h2">121</h5>
+          <h5 class="h3">121</h5>
+          <h5 class="h4">121</h5>
+        </div>
+        <div class="fire large box-120 box"><h4>120</h4></div>
+        <div class="fire large box-119 box">
+          <i class="fas fa-arrow-left"></i>
+          <h4>119</h4>
+        </div>
+        <div class="alabastra box-94 box"><h4>94</h4></div>
+        <div class="lake box-61 box"><h4>61</h4></div>
+        <div class="ithilien box-20 box">
+          <h5 class="h1">20</h5>
+          <h5 class="h2">20</h5>
+          <h5 class="h3">20</h5>
+          <h5 class="h4">20</h5>
+        </div>
+        <div class="woods box-38 box"><h4>38</h4></div>
+        <div class="lake box-75 box">
+          <h5 class="h1">75</h5>
+          <h5 class="h2">75</h5>
+          <h5 class="h3">75</h5>
+          <h5 class="h4">75</h5>
+        </div>
+        <div class="alabastra large box-104 box"><h4>104</h4></div>
+        <div class="fire large box-125 box"><h4>125</h4></div>
+        <div class="fire large box-138 box">
+          <i class="fas fa-arrow-down"></i>
+          <h4>138</h4>
+        </div>
+        <div class="fire large box-137 box"><h4>137</h4></div>
+        <div class="fire large box-136 box">
+          <h5 class="h1">136</h5>
+          <h5 class="h2">136</h5>
+          <h5 class="h3">136</h5>
+          <h5 class="h4">136</h5>
+        </div>
+        <div class="fire large box-135 box">
+          <i class="fas fa-arrow-left"></i>
+          <h4>135</h4>
+        </div>
+        <div class="fire large box-118 box">
+          <h5 class="h1">118</h5>
+          <h5 class="h2">118</h5>
+          <h5 class="h3">118</h5>
+          <h5 class="h4">118</h5>
+        </div>
+        <div class="alabastra box-93 box">
+          <h5 class="h1">93</h5>
+          <h5 class="h2">93</h5>
+          <h5 class="h3">93</h5>
+          <h5 class="h4">93</h5>
+        </div>
+        <div class="lake box-60 box">
+          <h5 class="h1">60</h5>
+          <h5 class="h2">60</h5>
+          <h5 class="h3">60</h5>
+          <h5 class="h4">60</h5>
+        </div>
+        <div class="ithilien box-19 box"><h4>19</h4></div>
       </div>
-      <div class="woods box-33"><h4>33</h4></div>
-      <div class="woods box-32"><h4>32</h4></div>
-      <div class="woods box-31">
-        <h5 class="h1">31</h5>
-        <h5 class="h2">31</h5>
-        <h5 class="h3">31</h5>
-        <h5 class="h4">31</h5>
+      <div class="middle">
+        <div class="left">
+          <div class="woods box-39 box"><h4>39</h4></div>
+          <div class="lake box-76 box"><h4>76</h4></div>
+          <div class="alabastra large box-105 box">
+            <h5 class="h1">105</h5>
+            <h5 class="h2">105</h5>
+            <h5 class="h3">105</h5>
+            <h5 class="h4">105</h5>
+          </div>
+          <div class="fire large box-126 box"><h4>126</h4></div>
+          <div class="fire large box-139 box"><h4>139</h4></div>
+          <div class="woods box-40 box">
+            <h5 class="h1">40</h5>
+            <h5 class="h2">40</h5>
+            <h5 class="h3">40</h5>
+            <h5 class="h4">40</h5>
+          </div>
+          <div class="lake box-77 box"><h4>77</h4></div>
+          <div class="alabastra large box-106 box"><h4>106</h4></div>
+          <div class="fire large box-127 box">
+            <h5 class="h1">127</h5>
+            <h5 class="h2">127</h5>
+            <h5 class="h3">127</h5>
+            <h5 class="h4">127</h5>
+          </div>
+          <div class="fire large box-140 box">
+            <h5 class="h1">140</h5>
+            <h5 class="h2">140</h5>
+            <i class="fas fa-arrow-right"></i>
+            <h5 class="h3">140</h5>
+            <h5 class="h4">140</h5>
+          </div>
+        </div>
+        <div class="dragon">
+          <div class="fire box-141 dragon"></div>
+        </div>
+        <div class="right">
+          <div class="fire large box-134 box"><h4>134</h4></div>
+          <div class="fire large box-117 box"><h4>117</h4></div>
+          <div class="alabastra box-92 box"><h4>92</h4></div>
+          <div class="lake box-59 box"><h4>59</h4></div>
+          <div class="ithilien box-18 box"><h4>18</h4></div>
+          <div class="fire large box-133 box">
+            <h5 class="h1">133</h5>
+            <h5 class="h2">133</h5>
+            <h5 class="h3">133</h5>
+            <h5 class="h4">133</h5>
+          </div>
+          <div class="fire large box-116 box"><h4>116</h4></div>
+          <div class="alabastra box-91 box"><h4>91</h4></div>
+          <div class="lake box-58 box"><h4>58</h4></div>
+          <div class="ithilien box-17 box">
+            <h5 class="h1">17</h5>
+            <h5 class="h2">17</h5>
+            <h5 class="h3">17</h5>
+            <h5 class="h4">17</h5>
+          </div>
+        </div>
       </div>
-      <div class="woods box-30"><h4>30</h4></div>
-      <div class="woods box-29"><h4>29</h4></div>
-      <div class="ithilien box-28">
-        <h5 class="h1">28</h5>
-        <h5 class="h2">28</h5>
-        <h5 class="h3">28</h5>
-        <h5 class="h4">28</h5>
-      </div>
-      <div class="ithilien box-27"><h4>27</h4></div>
-      <div class="ithilien box-26">
-        <h5 class="h1">26</h5>
-        <h5 class="h2">26</h5>
-        <h5 class="h3">26</h5>
-        <h5 class="h4">26</h5>
-      </div>
-      <div class="ithilien box-25"><h4>25</h4></div>
-      <div class="ithilien box-24"><h4>24</h4></div>
-      <div class="ithilien box-23">
-        <h5 class="h1">23</h5>
-        <h5 class="h2">23</h5>
-        <i class="fas fa-arrow-left"></i>
-        <h5 class="h3">23</h5>
-        <h5 class="h4">23</h5>
-      </div>
-      <div class="woods box-35"><h4>35</h4></div>
-      <div class="lake box-72">
-        <h5 class="h1">72</h5>
-        <h5 class="h2">72</h5>
-        <i class="fas fa-arrow-down"></i>
-        <h5 class="h3">72</h5>
-        <h5 class="h4">72</h5>
-      </div>
-      <div class="lake box-71"><h4>71</h4></div>
-      <div class="lake box-70"><h4>70</h4></div>
-      <div class="lake box-69">
-        <h5 class="h1">69</h5>
-        <h5 class="h2">69</h5>
-        <h5 class="h3">69</h5>
-        <h5 class="h4">69</h5>
-      </div>
-      <div class="lake box-68"><h4>68</h4></div>
-      <div class="lake box-67"><h4>67</h4></div>
-      <div class="lake box-66">
-        <h5 class="h1">66</h5>
-        <h5 class="h2">66</h5>
-        <h5 class="h3">66</h5>
-        <h5 class="h4">66</h5>
-      </div>
-      <div class="lake box-65"><h4>65</h4></div>
-      <div class="lake box-64"><h4>64</h4></div>
-      <div class="lake box-63">
-        <h5 class="h1">63</h5>
-        <h5 class="h2">63</h5>
-        <i class="fas fa-arrow-left"></i>
-        <h5 class="h3">63</h5>
-        <h5 class="h4">63</h5>
-      </div>
-      <div class="ithilien box-22"><h4>22</h4></div>
-      <div class="woods box-36"><h4>36</h4></div>
-      <div class="lake box-73"><h4>73</h4></div>
-      <div class="alabastra large box-102">
-        <h5 class="h1">102</h5>
-        <h5 class="h2">102</h5>
-        <i class="fas fa-arrow-down"></i>
-        <h5 class="h3">102</h5>
-        <h5 class="h4">102</h5>
-      </div>
-      <div class="alabastra large box-101"><h4>101</h4></div>
-      <div class="alabastra large box-100"><h4>100</h4></div>
-      <div class="alabastra box-99">
-        <h5 class="h1">99</h5>
-        <h5 class="h2">99</h5>
-        <h5 class="h3">99</h5>
-        <h5 class="h4">99</h5>
-      </div>
-      <div class="alabastra box-98">98</div>
-      <div class="alabastra box-97"><h4>97</h4></div>
-      <div class="alabastra box-96">
-        <h5 class="h1">96</h5>
-        <h5 class="h2">96</h5>
-        <h5 class="h3">96</h5>
-        <h5 class="h4">96</h5>
-      </div>
-      <div class="alabastra box-95">
-        <i class="fas fa-arrow-left"></i>
-        <h4>95</h4>
-      </div>
-      <div class="lake box-62">62</div>
-      <div class="ithilien box-21"><h4>21</h4></div>
-      <div class="woods box-37">
-        <h5 class="h1">37</h5>
-        <h5 class="h2">37</h5>
-        <h5 class="h3">37</h5>
-        <h5 class="h4">37</h5>
-      </div>
-      <div class="lake box-74"><h4>74</h4></div>
-      <div class="alabastra large box-103"><h4>103</h4></div>
-      <div class="fire large box-124">
-        <h5 class="h1">124</h5>
-        <h5 class="h2">124</h5>
-        <i class="fas fa-arrow-down"></i>
-        <h5 class="h3">124</h5>
-        <h5 class="h4">124</h5>
-      </div>
-      <div class="fire large box-123"><h4>123</h4></div>
-      <div class="fire large box-122"><h4>122</h4></div>
-      <div class="fire large box-121">
-        <h5 class="h1">121</h5>
-        <h5 class="h2">121</h5>
-        <h5 class="h3">121</h5>
-        <h5 class="h4">121</h5>
-      </div>
-      <div class="fire large box-120"><h4>120</h4></div>
-      <div class="fire large box-119">
-        <i class="fas fa-arrow-left"></i>
-        <h4>119</h4>
-      </div>
-      <div class="alabastra box-94"><h4>94</h4></div>
-      <div class="lake box-61"><h4>61</h4></div>
-      <div class="ithilien box-20">
-        <h5 class="h1">20</h5>
-        <h5 class="h2">20</h5>
-        <h5 class="h3">20</h5>
-        <h5 class="h4">20</h5>
-      </div>
-      <div class="woods box-38"><h4>38</h4></div>
-      <div class="lake box-75">
-        <h5 class="h1">75</h5>
-        <h5 class="h2">75</h5>
-        <h5 class="h3">75</h5>
-        <h5 class="h4">75</h5>
-      </div>
-      <div class="alabastra large box-104"><h4>104</h4></div>
-      <div class="fire large box-125"><h4>125</h4></div>
-      <div class="fire large box-138">
-        <i class="fas fa-arrow-down"></i>
-        <h4>138</h4>
-      </div>
-      <div class="fire large box-137"><h4>137</h4></div>
-      <div class="fire large box-136">
-        <h5 class="h1">136</h5>
-        <h5 class="h2">136</h5>
-        <h5 class="h3">136</h5>
-        <h5 class="h4">136</h5>
-      </div>
-      <div class="fire large box-135">
-        <i class="fas fa-arrow-left"></i>
-        <h4>135</h4>
-      </div>
-      <div class="fire large box-118">
-        <h5 class="h1">118</h5>
-        <h5 class="h2">118</h5>
-        <h5 class="h3">118</h5>
-        <h5 class="h4">118</h5>
-      </div>
-      <div class="alabastra box-93">
-        <h5 class="h1">93</h5>
-        <h5 class="h2">93</h5>
-        <h5 class="h3">93</h5>
-        <h5 class="h4">93</h5>
-      </div>
-      <div class="lake box-60">
-        <h5 class="h1">60</h5>
-        <h5 class="h2">60</h5>
-        <h5 class="h3">60</h5>
-        <h5 class="h4">60</h5>
-      </div>
-      <div class="ithilien box-19"><h4>19</h4></div>
-      <div class="woods box-39"><h4>39</h4></div>
-      <div class="lake box-76"><h4>76</h4></div>
-      <div class="alabastra large box-105">
-        <h5 class="h1">105</h5>
-        <h5 class="h2">105</h5>
-        <h5 class="h3">105</h5>
-        <h5 class="h4">105</h5>
-      </div>
-      <div class="fire large box-126"><h4>126</h4></div>
-      <div class="fire large box-139"><h4>139</h4></div>
-      <div class="fire box-141"></div>
-      <div class="fire large box-134"><h4>134</h4></div>
-      <div class="fire large box-117"><h4>117</h4></div>
-      <div class="alabastra box-92"><h4>92</h4></div>
-      <div class="lake box-59"><h4>59</h4></div>
-      <div class="ithilien box-18"><h4>18</h4></div>
-      <div class="woods box-40">
-        <h5 class="h1">40</h5>
-        <h5 class="h2">40</h5>
-        <h5 class="h3">40</h5>
-        <h5 class="h4">40</h5>
-      </div>
-      <div class="lake box-77"><h4>77</h4></div>
-      <div class="alabastra large box-106"><h4>106</h4></div>
-      <div class="fire large box-127">
-        <h5 class="h1">127</h5>
-        <h5 class="h2">127</h5>
-        <h5 class="h3">127</h5>
-        <h5 class="h4">127</h5>
-      </div>
-      <div class="fire large box-140">
-        <h5 class="h1">140</h5>
-        <h5 class="h2">140</h5>
-        <i class="fas fa-arrow-right"></i>
-        <h5 class="h3">140</h5>
-        <h5 class="h4">140</h5>
-      </div>
-      <div class="fire large box-133">
-        <h5 class="h1">133</h5>
-        <h5 class="h2">133</h5>
-        <h5 class="h3">133</h5>
-        <h5 class="h4">133</h5>
-      </div>
-      <div class="fire large box-116"><h4>116</h4></div>
-      <div class="alabastra box-91"><h4>91</h4></div>
-      <div class="lake box-58"><h4>58</h4></div>
-      <div class="ithilien box-17">
-        <h5 class="h1">17</h5>
-        <h5 class="h2">17</h5>
-        <h5 class="h3">17</h5>
-        <h5 class="h4">17</h5>
-      </div>
-      <div class="woods box-41"><h4>41</h4></div>
-      <div class="lake box-78">
-        <h5 class="h1">78</h5>
-        <h5 class="h2">78</h5>
-        <h5 class="h3">78</h5>
-        <h5 class="h4">78</h5>
-      </div>
-      <div class="alabastra large box-107"><h4>107</h4></div>
-      <div class="fire large box-128">
-        <i class="fas fa-arrow-right"></i>
-        <h4>128</h4>
-      </div>
-      <div class="fire large box-129"><h4>129</h4></div>
-      <div class="fire large box-130">
-        <h5 class="h1">130</h5>
-        <h5 class="h2">130</h5>
-        <h5 class="h3">130</h5>
-        <h5 class="h4">130</h5>
-      </div>
-      <div class="fire large box-131"><h4>131</h4></div>
-      <div class="fire large box-132">
-        <i class="fas fa-arrow-up"></i>
-        <h4>132</h4>
-      </div>
-      <div class="fire large box-115">
-        <h5 class="h1">115</h5>
-        <h5 class="h2">115</h5>
-        <h5 class="h3">115</h5>
-        <h5 class="h4">115</h5>
-      </div>
-      <div class="alabastra box-90">
-        <h5 class="h1">90</h5>
-        <h5 class="h2">90</h5>
-        <h5 class="h3">90</h5>
-        <h5 class="h4">90</h5>
-      </div>
-      <div class="lake box-57"><h4>57</h4></div>
-      <div class="ithilien box-16"><h4>16</h4></div>
-      <div class="woods box-42"><h4>42</h4></div>
-      <div class="lake box-79"><h4>79</h4></div>
-      <div class="alabastra large box-108">
-        <h5 class="h1">108</h5>
-        <h5 class="h2">108</h5>
-        <i class="fas fa-arrow-right"></i>
-        <h5 class="h3">108</h5>
-        <h5 class="h4">108</h5>
-      </div>
-      <div class="alabastra large box-109"><h4>109</h4></div>
-      <div class="alabastra large box-110"><h4>110</h4></div>
-      <div class="alabastra large box-111"><h4>111</h4></div>
-      <div class="alabastra large box-112">
-        <h5 class="h1">112</h5>
-        <h5 class="h2">112</h5>
-        <h5 class="h3">112</h5>
-        <h5 class="h4">112</h5>
-      </div>
-      <div class="fire large box-113"><h4>113</h4></div>
-      <div class="fire large box-114">
-        <i class="fas fa-arrow-up"></i>
-        <h4>114</h4>
-      </div>
-      <div class="alabastra box-89"><h4>89</h4></div>
-      <div class="woods box-56">
-        <h5 class="h1">56</h5>
-        <h5 class="h2">56</h5>
-        <h5 class="h3">56</h5>
-        <h5 class="h4">56</h5>
-      </div>
-      <div class="ithilien box-15"><h4>15</h4></div>
-      <div class="woods box-43">
-        <h5 class="h1">43</h5>
-        <h5 class="h2">43</h5>
-        <h5 class="h3">43</h5>
-        <h5 class="h4">43</h5>
-      </div>
-      <div class="lake box-80">
-        <i class="fas fa-arrow-right"></i>
-        <h4>80</h4>
-      </div>
-      <div class="lake box-81">
-        <h5 class="h1">81</h5>
-        <h5 class="h2">81</h5>
-        <h5 class="h3">81</h5>
-        <h5 class="h4">81</h5>
-      </div>
-      <div class="lake box-82"><h4>82</h4></div>
-      <div class="lake box-83"><h4>83</h4></div>
-      <div class="lake box-84">
-        <h5 class="h1">84</h5>
-        <h5 class="h2">84</h5>
-        <h5 class="h3">84</h5>
-        <h5 class="h4">84</h5>
-      </div>
-      <div class="alabastra box-85"><h4>85</h4></div>
-      <div class="alabastra box-86"><h4>86</h4></div>
-      <div class="alabastra box-87">
-        <h5 class="h1">87</h5>
-        <h5 class="h2">87</h5>
-        <h5 class="h3">87</h5>
-        <h5 class="h4">87</h5>
-      </div>
-      <div class="alabastra box-88">
-        <i class="fas fa-arrow-up"></i>
-        <h4>88</h4>
-      </div>
-      <div class="woods box-55"><h4>55</h4></div>
-      <div class="ithilien box-14">
-        <h5 class="h1">14</h5>
-        <h5 class="h2">14</h5>
-        <h5 class="h3">14</h5>
-        <h5 class="h4">14</h5>
-      </div>
-      <div class="woods box-44">
-        <i class="fas fa-arrow-right"></i>
-        <h4>44</h4>
-      </div>
-      <div class="woods box-45"><h4>45</h4></div>
-      <div class="woods box-46">
-        <h5 class="h1">46</h5>
-        <h5 class="h2">46</h5>
-        <h5 class="h3">46</h5>
-        <h5 class="h4">46</h5>
-      </div>
-      <div class="woods box-47"><h4>47</h4></div>
-      <div class="woods box-48"><h4>48</h4></div>
-      <div class="woods box-49">
-        <h5 class="h1">49</h5>
-        <h5 class="h2">49</h5>
-        <h5 class="h3">49</h5>
-        <h5 class="h4">49</h5>
-      </div>
-      <div class="woods box-50"><h4>50</h4></div>
-      <div class="woods box-51"><h4>51</h4></div>
-      <div class="woods box-52">
-        <h5 class="h1">52</h5>
-        <h5 class="h2">52</h5>
-        <h5 class="h3">52</h5>
-        <h5 class="h4">52</h5>
-      </div>
-      <div class="woods box-53"><h4>53</h4></div>
-      <div class="woods box-54">
-        <i class="fas fa-arrow-up"></i>
-        <h4>54</h4>
-      </div>
-      <div class="ithilien box-13"><h4>13</h4></div>
-      <div class="ithilien box-1"><h4>1</h4></div>
-      <div class="ithilien box-2"><h4>2</h4></div>
-      <div class="ithilien box-3"><h4>3</h4></div>
-      <div class="ithilien box-4"><h4>4</h4></div>
-      <div class="ithilien box-5">
-        <h5 class="h1">5</h5>
-        <h5 class="h2">5</h5>
-        <h5 class="h3">5</h5>
-        <h5 class="h4">5</h5>
-      </div>
-      <div class="ithilien box-6"><h4>6</h4></div>
-      <div class="ithilien box-7"><h4>7</h4></div>
-      <div class="ithilien box-8">
-        <h5 class="h1">8</h5>
-        <h5 class="h2">8</h5>
-        <h5 class="h3">8</h5>
-        <h5 class="h4">8</h5>
-      </div>
-      <div class="ithilien box-9"><h4>9</h4></div>
-      <div class="ithilien box-10"><h4>10</h4></div>
-      <div class="ithilien box-11">
-        <h5 class="h1">11</h5>
-        <h5 class="h2">11</h5>
-        <h5 class="h3">11</h5>
-        <h5 class="h4">11</h5>
-      </div>
-      <div class="ithilien box-12">
-        <i class="fas fa-arrow-up"></i>
-        <h4>12</h4>
+      <div class="bottom">
+        <div class="woods box-41 box"><h4>41</h4></div>
+        <div class="lake box-78 box">
+          <h5 class="h1">78</h5>
+          <h5 class="h2">78</h5>
+          <h5 class="h3">78</h5>
+          <h5 class="h4">78</h5>
+        </div>
+        <div class="alabastra large box-107 box"><h4>107</h4></div>
+        <div class="fire large box-128 box">
+          <i class="fas fa-arrow-right"></i>
+          <h4>128</h4>
+        </div>
+        <div class="fire large box-129 box"><h4>129</h4></div>
+        <div class="fire large box-130 box">
+          <h5 class="h1">130</h5>
+          <h5 class="h2">130</h5>
+          <h5 class="h3">130</h5>
+          <h5 class="h4">130</h5>
+        </div>
+        <div class="fire large box-131 box"><h4>131</h4></div>
+        <div class="fire large box-132 box">
+          <i class="fas fa-arrow-up"></i>
+          <h4>132</h4>
+        </div>
+        <div class="fire large box-115 box">
+          <h5 class="h1">115</h5>
+          <h5 class="h2">115</h5>
+          <h5 class="h3">115</h5>
+          <h5 class="h4">115</h5>
+        </div>
+        <div class="alabastra box-90 box">
+          <h5 class="h1">90</h5>
+          <h5 class="h2">90</h5>
+          <h5 class="h3">90</h5>
+          <h5 class="h4">90</h5>
+        </div>
+        <div class="lake box-57 box"><h4>57</h4></div>
+        <div class="ithilien box-16 box"><h4>16</h4></div>
+        <div class="woods box-42 box"><h4>42</h4></div>
+        <div class="lake box-79 box"><h4>79</h4></div>
+        <div class="alabastra large box-108 box">
+          <h5 class="h1">108</h5>
+          <h5 class="h2">108</h5>
+          <i class="fas fa-arrow-right"></i>
+          <h5 class="h3">108</h5>
+          <h5 class="h4">108</h5>
+        </div>
+        <div class="alabastra large box-109 box"><h4>109</h4></div>
+        <div class="alabastra large box-110 box"><h4>110</h4></div>
+        <div class="alabastra large box-111 box"><h4>111</h4></div>
+        <div class="alabastra large box-112 box">
+          <h5 class="h1">112</h5>
+          <h5 class="h2">112</h5>
+          <h5 class="h3">112</h5>
+          <h5 class="h4">112</h5>
+        </div>
+        <div class="fire large box-113 box"><h4>113</h4></div>
+        <div class="fire large box-114 box">
+          <i class="fas fa-arrow-up"></i>
+          <h4>114</h4>
+        </div>
+        <div class="alabastra box-89 box"><h4>89</h4></div>
+        <div class="woods box-56 box">
+          <h5 class="h1">56</h5>
+          <h5 class="h2">56</h5>
+          <h5 class="h3">56</h5>
+          <h5 class="h4">56</h5>
+        </div>
+        <div class="ithilien box-15 box"><h4>15</h4></div>
+        <div class="woods box-43 box">
+          <h5 class="h1">43</h5>
+          <h5 class="h2">43</h5>
+          <h5 class="h3">43</h5>
+          <h5 class="h4">43</h5>
+        </div>
+        <div class="lake box-80 box">
+          <i class="fas fa-arrow-right"></i>
+          <h4>80</h4>
+        </div>
+        <div class="lake box-81 box">
+          <h5 class="h1">81</h5>
+          <h5 class="h2">81</h5>
+          <h5 class="h3">81</h5>
+          <h5 class="h4">81</h5>
+        </div>
+        <div class="lake box-82 box"><h4>82</h4></div>
+        <div class="lake box-83 box"><h4>83</h4></div>
+        <div class="lake box-84 box">
+          <h5 class="h1">84</h5>
+          <h5 class="h2">84</h5>
+          <h5 class="h3">84</h5>
+          <h5 class="h4">84</h5>
+        </div>
+        <div class="alabastra box-85 box"><h4>85</h4></div>
+        <div class="alabastra box-86 box"><h4>86</h4></div>
+        <div class="alabastra box-87 box">
+          <h5 class="h1">87</h5>
+          <h5 class="h2">87</h5>
+          <h5 class="h3">87</h5>
+          <h5 class="h4">87</h5>
+        </div>
+        <div class="alabastra box-88 box">
+          <i class="fas fa-arrow-up"></i>
+          <h4>88</h4>
+        </div>
+        <div class="woods box-55 box"><h4>55</h4></div>
+        <div class="ithilien box-14 box">
+          <h5 class="h1">14</h5>
+          <h5 class="h2">14</h5>
+          <h5 class="h3">14</h5>
+          <h5 class="h4">14</h5>
+        </div>
+        <div class="woods box-44 box">
+          <i class="fas fa-arrow-right"></i>
+          <h4>44</h4>
+        </div>
+        <div class="woods box-45 box"><h4>45</h4></div>
+        <div class="woods box-46 box">
+          <h5 class="h1">46</h5>
+          <h5 class="h2">46</h5>
+          <h5 class="h3">46</h5>
+          <h5 class="h4">46</h5>
+        </div>
+        <div class="woods box-47 box"><h4>47</h4></div>
+        <div class="woods box-48 box"><h4>48</h4></div>
+        <div class="woods box-49 box">
+          <h5 class="h1">49</h5>
+          <h5 class="h2">49</h5>
+          <h5 class="h3">49</h5>
+          <h5 class="h4">49</h5>
+        </div>
+        <div class="woods box-50 box"><h4>50</h4></div>
+        <div class="woods box-51 box"><h4>51</h4></div>
+        <div class="woods box-52 box">
+          <h5 class="h1">52</h5>
+          <h5 class="h2">52</h5>
+          <h5 class="h3">52</h5>
+          <h5 class="h4">52</h5>
+        </div>
+        <div class="woods box-53 box"><h4>53</h4></div>
+        <div class="woods box-54 box">
+          <i class="fas fa-arrow-up"></i>
+          <h4>54</h4>
+        </div>
+        <div class="ithilien box-13 box"><h4>13</h4></div>
+        <div class="ithilien box-1 box"><h4>1</h4></div>
+        <div class="ithilien box-2 box"><h4>2</h4></div>
+        <div class="ithilien box-3 box"><h4>3</h4></div>
+        <div class="ithilien box-4 box"><h4>4</h4></div>
+        <div class="ithilien box-5 box">
+          <h5 class="h1">5</h5>
+          <h5 class="h2">5</h5>
+          <h5 class="h3">5</h5>
+          <h5 class="h4">5</h5>
+        </div>
+        <div class="ithilien box-6 box"><h4>6</h4></div>
+        <div class="ithilien box-7 box"><h4>7</h4></div>
+        <div class="ithilien box-8 box">
+          <h5 class="h1">8</h5>
+          <h5 class="h2">8</h5>
+          <h5 class="h3">8</h5>
+          <h5 class="h4">8</h5>
+        </div>
+        <div class="ithilien box-9 box"><h4>9</h4></div>
+        <div class="ithilien box-10 box"><h4>10</h4></div>
+        <div class="ithilien box-11 box">
+          <h5 class="h1">11</h5>
+          <h5 class="h2">11</h5>
+          <h5 class="h3">11</h5>
+          <h5 class="h4">11</h5>
+        </div>
+        <div class="ithilien box-12 box">
+          <i class="fas fa-arrow-up"></i>
+          <h4>12</h4>
+        </div>
       </div>
     </div>
   </body>
